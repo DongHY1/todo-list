@@ -3,12 +3,17 @@ const { Pool } = require('pg');
 const app = express();
 const cors = require('cors');
 const PORT = 5001;
+// const pool = new Pool({
+//   user: 'masahiro',
+//   password: 'dhywj123',
+//   host: 'localhost',
+//   port: 5432,
+//   database: 'todolist',
+// });
 const pool = new Pool({
-  user: 'masahiro',
-  password: 'dhywj123',
-  host: 'localhost',
-  port: 5432,
-  database: 'todolist',
+  user: 'root',
+  password: 'root',
+  host: 'postgres',
 });
 app.get('/', (req, res) => {
   res.json('Hello');
