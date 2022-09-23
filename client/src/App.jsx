@@ -8,7 +8,7 @@ export default function App() {
   const [id, setId] = useState(-1);
   const getList = async () => {
     try {
-      const res = await fetch('http://localhost:5001/todos', {
+      const res = await fetch('http://114.132.221.182:5001/todos', {
         method: 'GET',
       });
       const jsonRes = await res.json();
@@ -21,7 +21,7 @@ export default function App() {
     e.preventDefault();
     try {
       const body = { description: desc };
-      const res = await fetch(`http://localhost:5001/todos`, {
+      const res = await fetch(`http://114.132.221.182:5001/todos`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
@@ -33,7 +33,7 @@ export default function App() {
   };
   const handleRemoveClick = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5001/todos/${id}`, {
+      const res = await fetch(`http://114.132.221.182:5001/todos/${id}`, {
         method: 'DELETE',
       });
       alert(res.statusText);
@@ -46,7 +46,7 @@ export default function App() {
     e.preventDefault();
     try {
       const body = { description: editDesc };
-      const res = await fetch(`http://localhost:5001/todos/${id}`, {
+      const res = await fetch(`http://114.132.221.182:5001/todos/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
