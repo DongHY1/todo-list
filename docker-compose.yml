@@ -12,17 +12,13 @@ services:
     volumes:
       - ./setup.sql:/docker-entrypoint-initdb.d/setup.sql
   server:
-    build:
-      context: ./server
-      dockerfile: Dockerfile
+    image: 'haoyudong/todolist_server:latest'
     depends_on:
       - postgres
     ports:
       - '5001:5001'
   client:
-    build:
-      context: ./client
-      dockerfile: Dockerfile
+    image: 'haoyudong/todolist_client:latest'
     ports:
       - '80:80'
     depends_on:
